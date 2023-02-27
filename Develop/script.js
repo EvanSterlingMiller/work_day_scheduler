@@ -7,12 +7,13 @@ $(document).ready(function () {
   // this is the save button funtion
   $(".saveBtn").on("click", function() {
     // var for the change in the discription attribute
-    var save_text = $(this).siblings(".decscription").string()
+    var save_text = $(this).siblings(".description").val()
     // var for the change in the id attribute
     var save_time = $(this).parent().attr("id")
-
+    console.log(save_text, save_time)
     // saving the function to local storage
     localStorage.setItem(save_time, save_text)
+    
 
   }) // end of the save button function
 
@@ -26,13 +27,13 @@ $(document).ready(function () {
 
       // loop over time blocks
       $(".time-block").each(function () {
-          var hour_block = parseInt($(this).attr("id").split("hour")[1]);
+          var hour_block = parseInt($(this).attr("id").split("-")[1]);
           
           if (hour_block < current_hour) {
               $(this).addClass("past");
               $(this).removeClass("future");
               $(this).removeClass("present");
-          }else if (hour_blockr == current_hour) {
+          }else if (hour_block === current_hour) {
               $(this).removeClass("past");
               $(this).addClass("present");
               $(this).removeClass("future");
