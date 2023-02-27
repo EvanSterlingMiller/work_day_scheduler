@@ -12,6 +12,17 @@ textarea {
   padding: 10px;
 }
 
+.p-5{
+  text-align: center;
+  background-color: #b3e7f3;
+  color: black;
+  
+}
+
+h1 {
+  text-align: center;
+}
+
 .description {
   white-space: pre-wrap;
 }
